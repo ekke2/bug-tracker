@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta http-equiv="content-language" content="en">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="website, bug, tracker, bugtracker">
+        <meta name="author" content="Wiaan Joshua Willemse, Luan Frey, Nico Adriaan Coetzee">
+        <meta name="publisher" content="Nico Adriaan Coetzee, Wiaan Joshua Willemse, Luan Frey">
+        <meta name="copyright" content="Nico Adriaan Coetzee, Wiaan Joshua Willemse, Luan Frey">
+        <meta name="description" content="Bug Tracker that eases the process of creating software with a team.">
+        <meta name="copyright" content="Byte Brawlers">
+        <link rel="stylesheet" href="/css/all.css">
+        <script src="https://kit.fontawesome.com/62fae0b962.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    </head>
+
+    <body>
+        <header class="header">
+            <nav class="navbar">
+                <input type="checkbox" id="menu-toggle"/>
+                <div class="logo"><a><i class="fa-solid fa-shield" style="color: #36c446;"></i> Glitch<span>Gaurd</span></a></div>
+                    
+                <div class="MenIco" onclick="myFunction(this)" id="menIco">
+                    <label for="menu-toggle">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </label>
+                  </div>
+
+                <ul class="menu">
+                    <li><a href="#" class="menu-btn">Home</a></li>
+                    <li><a href="#" class="menu-btn">Roles</a></li>
+                    <li><a href="#" class="menu-btn">Manage</a></li>
+                    <li><a href="#" class="menu-btn">Projects</a></li>
+                    <li><a href="#" class="menu-btn">Tickets</a></li>
+                    <li><a href="#" class="menu-btn">Profiles</a></li>
+                    <li><a href="#" class="menu-btn"><i class="fa-solid fa-bell fa-lg"></i></a></li>
+                    <li><a href="#" class="menu-btn"><div class="roundicon"><i class="fa-solid fa-user"></i></div></a></li>
+                </ul>    
+            </nav>
+        </header>
+
+        <div id="mySidenav" class="sidenav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+          </div>
+
+
+        <div id="main">
+
+
+        </div>
+
+        <script>
+            var clicked = false;
+
+            const mediaQuery = window.matchMedia('(min-width: 1051px)');
+
+            function myFunction(x) {
+              x.classList.toggle("change");
+              if (!clicked) {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginRight = "250px";
+                clicked = true;
+              } else {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginRight = "0";
+                clicked = false;
+              };
+            }
+
+            mediaQuery.addListener((event) => {
+            if (event.matches && clicked) {
+                // Media query is true and clicked is true, call the function
+                const x = document.getElementById("mySidenav");
+                myFunction(x);
+            }
+            });
+
+            if (mediaQuery.matches && clicked) {
+                const x = document.getElementById("menIco");
+                myFunction(x);
+                };
+
+            
+            </script>
+
+    </body>
+</html>
